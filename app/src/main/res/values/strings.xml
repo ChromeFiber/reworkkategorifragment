@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">reworkkategorifragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kategorinavn">kategorinavn</string>
+    <string name="bilde_av_kategori">Bilde av kategori</string>
+    <string name="flagg">Flagg</string>
+
+</resources>
