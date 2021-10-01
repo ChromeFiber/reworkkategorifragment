@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class ListAdapter(private val katList:List<KategoriModel>): RecyclerView.Adapter<ListAdapter.ViewHolder>() {
@@ -17,8 +18,6 @@ class ListAdapter(private val katList:List<KategoriModel>): RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-
         val itemsViewModel = katList[position]
         holder.imageButton.setImageResource(itemsViewModel.katImg)
         holder.textView.text = itemsViewModel.katnavn
@@ -28,8 +27,15 @@ class ListAdapter(private val katList:List<KategoriModel>): RecyclerView.Adapter
         return katList.size
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+
+
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val imageButton : ImageButton = itemView.findViewById(R.id.imageButton)
         val textView : TextView = itemView.findViewById(R.id.textView)
+
+        override fun onClick(view: View?) {
+
+        }
+
     }
 }

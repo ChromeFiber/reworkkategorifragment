@@ -1,5 +1,7 @@
 package com.example.reworkkategorifragment
 
-data class KategoriModel(val katImg: Int, val katnavn: String) 
+import androidx.lifecycle.ViewModel
+
+data class KategoriModel(val katImg: Int, val katnavn: String) : ViewModel()
 
 

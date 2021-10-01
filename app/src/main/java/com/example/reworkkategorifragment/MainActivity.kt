@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_kategori)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.kategori_recycler_view)
+      /*  val recyclerView = findViewById<RecyclerView>(R.id.kategori_recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
         val data = ArrayList<KategoriModel>()
         for (i in 1..3){
@@ -22,5 +22,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = ListAdapter(data)
 
         recyclerView.adapter = adapter
+
+       */
     }
 }
