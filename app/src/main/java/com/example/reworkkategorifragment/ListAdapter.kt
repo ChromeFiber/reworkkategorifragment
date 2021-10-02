@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
-class ListAdapter(private val katList:List<KategoriModel>): RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -18,24 +18,23 @@ class ListAdapter(private val katList:List<KategoriModel>): RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val itemsViewModel = katList[position]
-        holder.imageButton.setImageResource(itemsViewModel.katImg)
-        holder.textView.text = itemsViewModel.katnavn
+        holder.bind(position)
     }
 
     override fun getItemCount(): Int {
-        return katList.size
+        return KategoriData.kategoribilde.size
     }
 
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val katnavn: TextView = view.findViewById(R.id.textView)
+        private val katbilde: ImageButton = view.findViewById(R.id.imageButton)
+        fun bind(position: Int) {
+            katnavn.text = KategoriData.kategorinavn[position]
+            katbilde.setImageResource(KategoriData.kategoribilde[position])
 
-
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        val imageButton : ImageButton = itemView.findViewById(R.id.imageButton)
-        val textView : TextView = itemView.findViewById(R.id.textView)
-
-        override fun onClick(view: View?) {
-
+            katbilde.setOnClickListener{
+                it.findNavController().navigate(R.id.action_kategoriFragment_to_nesteFragment)
+            }
         }
-
     }
 }

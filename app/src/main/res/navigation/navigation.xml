@@ -11,12 +11,16 @@
         android:label="fragment_kategori"
         tools:layout="@layout/fragment_kategori" >
         <action
-            android:id="@+id/action_kategoriFragment_to_hjelpeFragment"
-            app:destination="@id/hjelpeFragment" />
+            android:id="@+id/action_kategoriFragment_to_nesteFragment"
+            app:destination="@id/nesteFragment" />
     </fragment>
     <fragment
-        android:id="@+id/hjelpeFragment"
-        android:name="com.example.reworkkategorifragment.HjelpeFragment"
-        android:label="fragment_hjelp"
-        tools:layout="@layout/fragment_hjelp" />
+        android:id="@+id/nesteFragment"
+        android:name="com.example.reworkkategorifragment.NesteFragment"
+        android:label="fragment_neste"
+        tools:layout="@layout/fragment_neste" >
+        <action
+            android:id="@+id/action_nesteFragment_to_kategoriFragment"
+            app:destination="@id/kategoriFragment" />
+    </fragment>
 </navigation>
